@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
+  "plugins": ["react", "jsx", "jsx-a11y", "import"],
+  "rules": {
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    //"max-len": ["error", { "code": 120 }],
+    "object-curly-spacing": ["error", "always"],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "import/no-unresolved": [2, { "caseSensitiveStrict": true }],
+    "settings": {
+      "import/resolver": {
+        "node": {
+            "extensions": [".js", ".jsx"],
+            "moduleDirectory": ["node_modules", "src/"]
+        }
+    }
+    }
+  }
 }
