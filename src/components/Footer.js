@@ -1,7 +1,7 @@
 function Footer() {
   return (
-    <footer>
-      
+    <footer className="mt-28">
+      <p>Some description for footer</p>
     </footer>
   );
 }

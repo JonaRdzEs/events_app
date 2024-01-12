@@ -1,26 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
+import TextLink from "./TextLink";
 
 function Header() {
   return (
-    <header>
+    <header className="w-full">
       <nav>
-        <img src="" alt="events logo" />
-        <ul>
-          <li>
-            <Link href="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/events">
-              Events
-            </Link>
-          </li>
-          <li>
-            <Link href="/about-us">
-              About us
-            </Link>
-          </li>
+        <ul className="flex justify-end items-center grow gap-6">
+          <TextLink url="/" text="Home" />
+          <TextLink url="/events" text="Events" />
+          <TextLink url="/about-us" text="About us" />
         </ul>
       </nav>
     </header>
