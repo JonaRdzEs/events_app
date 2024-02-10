@@ -38,10 +38,17 @@ function RegisterForEventForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>Get registered for this event!</label>
-        <input ref={emailRef} type="email" id="email" placeholder="Please insert your email here" required/>
-        <button type="submit">Submit</button>
+      <form className="flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit}>
+        <input
+          className="border-2 border-gray-300 rounded-md w-64 py-1 px-4"
+          aria-label="Register for the event" 
+          ref={emailRef} 
+          type="email" 
+          id="email" 
+          placeholder="Please insert your email here" 
+          required
+        />
+        <button className="bg-green-600 text-white font-semibold rounded-md p-2 w-64" type="submit">Register</button>
       </form>
       {error && <p>{error}</p>}
     </>

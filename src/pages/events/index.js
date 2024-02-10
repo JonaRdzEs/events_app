@@ -1,17 +1,9 @@
-import EventCard from "@/components/EventCard";
+import CityEvent from "@/components/CityEvent";
 
 function EventsPage({ events }) {
   return (
-    <div>
-      <h1>My events page</h1>
-      {events?.map((event) => (
-        <EventCard
-          key={event.id}
-          url={`/events/${event.id}`}
-          title={event.title}
-          imageSrc={event.image}
-        />
-      ))}
+    <div className="flex flex-col gap-14 items-center pt-16">
+      {events?.map((event) => <CityEvent key={event.id} { ...event } url={`/events/${event.id}`} />)}
     </div>
   );
 }

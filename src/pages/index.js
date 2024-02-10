@@ -1,5 +1,7 @@
 import Head from "next/head";
-import EventCard from "@/components/EventCard";
+import CityEventCard from "@/components/CityEventCard";
+
+const IMAGE_SRC = "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 export default function Home({ events }) {
   return (
@@ -15,13 +17,13 @@ export default function Home({ events }) {
           City Beats: <br/> Dive into a World of Unmissable Events!
         </h1>
         <div className=" w-1/2 relative">
-          <img className="w-96 h-96 rounded-full z-10 absolute right-36 -top-0" src="https://picsum.photos/200"  alt="lake" />
-          <span className="w-96 h-96 inline-block rounded-full bg-green-600 absolute right-0 top-0"></span>
+          <img className="w-96 h-96 rounded-full z-10 absolute right-36 -top-0 object-cover" src={IMAGE_SRC}  alt="lake" />
+          <span className="w-96 h-96 inline-block rounded-full bg-green-500 absolute right-0 top-0"></span>
         </div>
       </div>
       <main className="flex flex-col gap-9 ">
         {events?.map((event) => (
-          <EventCard
+          <CityEventCard
             key={event.id}
             url={`/events/${event.id}`}
             title={event.title}
@@ -35,11 +37,11 @@ export default function Home({ events }) {
 }
 
 export async function getServerSideProps() {
-  const { events_categories } = await import("@/data/data.json");
+  const { main_events } = await import("@/data/data.json");
 
   return {
     props: {
-      events: events_categories || [],
+      events: main_events || [],
     },
   };
 }

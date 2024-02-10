@@ -1,20 +1,17 @@
-import Link from "next/link";
+import GoToEventButton from "./GoToEventButton";
 
 function EventCard({ url = "", title = "", description = "", imageSrc = "" }) {
   return (
-    <section className="flex gap-9 min-h-[460px]">
-      <div className="border-sky-500 border-2 relative min-h-max w-1/3">
-        <div role="img" className="bg-[#9DD89F] w-48 h-[420px] rounded-lg rotate-6 absolute"></div>
-        <img className="w-80 h-80 rounded-md max-w-none relative top-16 left-10" src={imageSrc} alt={title} />
+    <div>
+      <div className="bg-green-700 h-44 w-full rounded-lg pt-9">
+        <img className="rounded-lg w-4/5 h-60 object-cover m-auto" src={imageSrc} alt="" />
       </div>
-      <div className="flex flex-col gap-4 justify-center items-center w-2/3">
-          <h4 className="text-2xl font-normal">{title}</h4>
-          {description ? <p className="font-thin text-xl">{description}</p> : null}
-          <Link href={url}>
-            Go to events
-          </Link>
+      <div className="mt-28 flex justify-center items-center flex-col p-4">
+        <h5 className="font-semibold text-2xl">{title}</h5>
+        <p className="line-clamp-2 text-lg">{description}</p>
+        <GoToEventButton url={url} />
       </div>
-    </section>
+    </div>
   );
 }
 

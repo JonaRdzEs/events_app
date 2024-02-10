@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  a {
-    @apply flex justify-center items-center h-full w-full hover:cursor-pointer;
-  }
-}
-
 body {
   background-color: #F5F5F5;
 }
