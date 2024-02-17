@@ -59,7 +59,7 @@ function handler(request, response) {
       ...event_to_register,
       emails_registered: [...event_to_register.emails_registered, email],
     });
-    fs.writeFileSync(filePath, JSON.stringify({ events_categories, allEvents: updated_data }));
+    fs.writeFileSync(filePath, JSON.stringify({ events_categories, allEvents: updated_data }, null, 2));
 
     response.status(200).json({
       message: `You have been registered successfully with the email: ${email}`,
