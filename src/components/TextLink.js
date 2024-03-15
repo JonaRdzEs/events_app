@@ -10,7 +10,7 @@ function TextLink({ className = "", url = "", text = "Link" }) {
   }
 
   return (
-    <li className={`h-full text-center p-2 w-28 font-medium ${isActive() ? "bg-green-500 rounded-lg text-white" : ""}  ${className}`}>
+    <li className={`w-auto text-sm h-full text-center p-2 md:w-28 font-medium ${isActive() ? "bg-green-500 rounded-lg text-white" : ""}  ${className}`}>
       <Link href={url}>{text}</Link>
     </li>
   );
