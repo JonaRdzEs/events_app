@@ -1,6 +1,7 @@
-function RightArrow({ color = "#FFFFFF", height = "25px", width = "25px" }) {
+function RightArrow({ className = "", color = "#FFFFFF", height = "25px", width = "25px" }) {
   return (
     <svg
+      className={className}
       fill={color}
       version="1.1"
       id="Capa_1"

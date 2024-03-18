@@ -7,7 +7,7 @@ function Events({ events }) {
 
   return (
     <>
-      <h3 className="text-3xl font-bold mt-7 mb-10">Events in {formatCityName(router.query?.city)}</h3>
+      <h3 className="text-center text-3xl font-bold mt-7 mb-10 md:text-left">Events in {formatCityName(router.query?.city)}</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
         {events?.map((event) => (
           <EventCard

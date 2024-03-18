@@ -8,7 +8,7 @@ function CityEventCard({ url = "", title = "", description = "", imageSrc = "" }
           className="w-full bg-[#9DD89F] lg:w-48 lg:h-[420px] rounded-lg rotate-6 lg:absolute"
         ></div>
         <img
-          className="w-full h-44 lg:w-80 lg:h-80 rounded-md max-w-none lg:relative lg:top-16 lg:left-10"
+          className="object-cover w-full h-44 lg:w-80 lg:h-80 rounded-md max-w-none lg:relative lg:top-16 lg:left-10"
           src={imageSrc}
           alt={title}
         />

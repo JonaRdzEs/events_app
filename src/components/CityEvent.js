@@ -4,14 +4,14 @@ import RightArrow from "./icons/RightArrow";
 function CityEvent({ id, title, image, description, url }) {
   return (
     <div className="w-full">
-      <div className={`h-56 lg:h-[555px] relative bg-neutral-900/[0.98] rounded-lg`}>
-        <img className="h-full w-full object-cover mix-blend-overlay" src={image} alt="" />
+      <div className={`h-56 lg:h-[555px] relative bg-green-500 rounded-lg flex justify-center items-center`}>
+        <img className="h-full w-full object-cover mix-blend-overlay opacity-[0.40]" src={image} alt="" />
         <Link href={url}>
-          <a className="hover:border-b-8 border-white hover:decoration-white absolute flex justify-center items-center gap-4 top-1/2 left-1/4 lg:left-1/3 rounded-sm">
-            <h4 className="text-lg text-white font-bold lg:text-4xl text-center pb-4">
+          <a className="hover:shadow-white hover:shadow-[0_6px_0_0_rgba(1,1,1,1)] hover:decoration-white absolute flex justify-center items-center gap-4">
+            <h4 className="text-lg text-white font-bold lg:text-4xl text-center ">
               {title}
             </h4>
-            <RightArrow width="15px" height="15px"/>
+            <RightArrow className="w-[15px] h-[15px] lg:w-6 lg:h-6" width="15px" height="15px"/>
           </a>
         </Link>
         
@@ -22,3 +22,4 @@ function CityEvent({ id, title, image, description, url }) {
 }
 
 export default CityEvent;
+1

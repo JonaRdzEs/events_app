@@ -1,6 +1,7 @@
-function TrophyIcon({ color = "#358438", width = "90px", height = "90px" }) {
+function TrophyIcon({ className = "", color = "#358438", width = "90px", height = "90px" }) {
   return (
     <svg
+      className={className}
       fill={color}
       version="1.1"
       id="Trophy_x5F_cup"

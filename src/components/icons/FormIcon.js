@@ -1,6 +1,7 @@
-function FormIcon({ color = "#358438", width = "90px", height = "90px" }) {
+function FormIcon({ className = "", color = "#358438", width = "90px", height = "90px" }) {
   return (
     <svg
+      className={className}
       fill={color}
       height={height}
       width={width}

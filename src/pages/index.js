@@ -12,12 +12,12 @@ export default function Home({ events }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col gap-5 my-20 lg:my-32 lg:h-96 lg:flex-row lg:justify-between">
-        <h1 className="text-2xl ls:text-6xl font-bold w-full text-center self-center lg:w-1/2 lg:text-7xl lg:text-left">
+      <div className="my-20 lg:my-32 lg:h-96 md:flex-row md:justify-between">
+        <h1 className="text-3xl md:text-6xl font-bold w-full text-center self-center lg:w-1/2 lg:text-7xl lg:text-left">
           City Beats: <br/> Dive into a World of Unmissable Events!
         </h1>
-        <div className="flex justify-center w-full lg:w-1/2 relative">
-          <img className="w-40 h-40 rounded-full z-10 right-36 -top-0 object-cover lg:w-96 md:h-96 lg:absolute" src={IMAGE_SRC}  alt="lake" />
+        <div className="hidden md:flex md:justify-center w-full lg:w-1/2 relative">
+          <img className="w-40 h-40 rounded-full z-10 right-36 -top-0 object-cover md:w-96 md:h-96 lg:absolute" src={IMAGE_SRC}  alt="lake" />
           <span className="w-40 h-40 -ml-16 lg:w-96 lg:h-96 inline-block rounded-full bg-green-500 lg:absolute right-0 top-0"></span>
         </div>
       </div>
