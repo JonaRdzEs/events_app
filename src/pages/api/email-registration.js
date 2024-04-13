@@ -27,7 +27,7 @@ function handler(request, response) {
     const validEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (!email || !email.match(validEmailRegex)) {
-      response.status(422).json({
+      response.status(400).json({
         code: "BAD_REQUEST",
         message: "Please provide a valid email",
       });

@@ -1,4 +1,4 @@
-function PlaneIcon({ className = "", color = "#358438", width = "90px", height = "90px" }) {
+function PlaneIcon({ className = "", color = "#4caf50", width = "90px", height = "90px" }) {
   return (
     <svg
       className={className}

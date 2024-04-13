@@ -10,13 +10,13 @@ function ContactUS() {
       <h4 className="text-3xl text-center lg:text-6xl font-bold my-16">
         Join the Global Celebration: Your Passport to Unforgettable Events!
       </h4>
-      <div className="w-full my-16 md:h-[450px] block md:relative lg:mb-36">
+      <div className="w-full my-16 md:h-[450px] block md:relative lg:mb-36 md:my-20">
         <img
           className="w-full h-40 md:h-full object-cover"
           src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
         />
-        <div className="bg-green-600 rounded-sm md:w-[95%] py-6 px-3 md:p-12 md:absolute md:top-48 lg:left-10 lg:-bottom-16">
+        <div className="bg-green-600 rounded-sm md:w-[95%] py-6 px-3 md:p-12 md:absolute md:top-48 md:left-4 lg:left-10 lg:-bottom-16">
           <h6 className="text-white font-semibold text-2xl mb-5">John Doe</h6>
           <p className="text-white text-md ">
             “Registering for events has never been this exhilarating! Thanks to
@@ -38,22 +38,22 @@ function ContactUS() {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 place-items-center gap-6 md:gap-8 md:[&>*:nth-child(4)]:col-span-full">
           <StatsSection 
-            icon={<FormIcon className="w-16 h-16 md:w-20 md:h-20"/>}
+            icon={<FormIcon className="w-16 h-16 md:w-20 md:h-20" color="#333333" />}
             digit="1M+"
-            text="Registration"
+            text="Registrations"
           />
           <StatsSection 
-            icon={<LocationIcon className="w-16 h-16 md:w-20 md:h-20" />}
+            icon={<LocationIcon className="w-16 h-16 md:w-20 md:h-20" color="#333333" />}
             digit="50+"
             text="Countries"
           />
           <StatsSection 
-            icon={<PartyIcon className="w-16 h-16 md:w-20 md:h-20" />}
+            icon={<PartyIcon className="w-16 h-16 md:w-20 md:h-20" color="#333333" />}
             digit="10K+"
             text="Events"
           />
           <StatsSection 
-            icon={<PlaneIcon className="w-16 h-16 md:w-20 md:h-20" />}
+            icon={<PlaneIcon className="w-16 h-16 md:w-20 md:h-20" color="#333333" />}
             digit="100K+"
             text="Trips"
           />

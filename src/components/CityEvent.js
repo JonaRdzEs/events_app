@@ -4,7 +4,7 @@ import RightArrow from "./icons/RightArrow";
 function CityEvent({ id, title, image, description, url }) {
   return (
     <div className="w-full">
-      <div className={`h-56 lg:h-[555px] relative bg-green-500 rounded-lg flex justify-center items-center`}>
+      <div className={`h-56 lg:h-96 xl:h-[460px] relative bg-green-500 rounded-lg flex justify-center items-center`}>
         <img className="h-full w-full object-cover mix-blend-overlay opacity-[0.40]" src={image} alt="" />
         <Link href={url}>
           <a className="hover:shadow-white hover:shadow-[0_6px_0_0_rgba(1,1,1,1)] hover:decoration-white absolute flex justify-center items-center gap-4">
