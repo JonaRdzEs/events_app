@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
+import toast from "react-hot-toast";
 
 function RegisterForEventForm() {
   const emailRef = useRef();
@@ -24,15 +25,15 @@ function RegisterForEventForm() {
         },
         body: JSON.stringify({ email: emailValue, event_id }),
       });
-      console.log("response", response);
       const data = await response.json();
-      console.log(data);
       if(response.status === 200) {
-        // do something
-        console.log(data?.message || "Successfully registered");
+        toast.success(data.message);
+        emailRef.current.value = "";
+      } else {
+        toast.error(data.message)
       }
     } catch (error) {
-      console.log("There was an error", error);
+      console.error("There was an error", error);
     }
   };
 
@@ -50,7 +51,7 @@ function RegisterForEventForm() {
         />
         <button className="bg-green-600 text-white font-semibold rounded-md p-2 w-64" type="submit">Register</button>
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="text-sm text-red-400 text-left mt-2">{error}</p>}
     </>
   );
 }

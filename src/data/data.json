@@ -72,7 +72,9 @@
       "city": "london",
       "description": "Step into a winter wonderland of enchantment and joy at Hyde Park Winter Wonderland! 🎄✨ Immerse yourself in a magical world where festive lights twinkle, the air is filled with the aroma of seasonal treats, and the sound of laughter echoes through the park. \n 🎡 Highlights: Ice-Skating Spectacle: Glide under the twinkling lights on our picturesque ice rink, a festive experience like no other. Christmas Market Extravaganza: Explore charming wooden chalets offering unique gifts, delicious treats, and holiday treasures. Thrilling Rides: Scream with delight on our adrenaline-pumping rides that transform Hyde Park into a playground of excitement. Live Entertainment: From captivating shows to roving performers, there's something for everyone in our festive lineup. 🌟 Why Register? Secure your spot now to unlock exclusive perks, fast-track entry, and a chance to win exciting prizes. Be part of the most magical winter celebration in London! Don't miss the chance to create lasting memories at Hyde Park Winter Wonderland. Register today and let the festivities begin! ❄️🎅🤶",
       "image": "https://images.unsplash.com/photo-1514543580686-6488d80c6875?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "emails_registered": []
+      "emails_registered": [
+        "user1@example.com"
+      ]
     },
     {
       "id": "new-years-eve-in-london-2024",
@@ -216,7 +218,10 @@
       "city": "new-york",
       "description": "Experience the magic of live music under the stars at the Central Park SummerStage Concert Series! 🎶✨ Join us for a season of unforgettable performances by top artists spanning genres from rock and pop to jazz and hip-hop. Gather your friends, pack a picnic, and soak up the summer vibes in one of New York City's most iconic outdoor venues. From chart-toppers to emerging talents, there's something for everyone at SummerStage!",
       "image": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "emails_registered": []
+      "emails_registered": [
+        "user1@example.com",
+        "user2@example.com"
+      ]
     },
     {
       "id": "new-york-fashion-week-2023",
@@ -297,6 +302,6 @@
       "description": "Catch the waves and ride the tide at the Sydney Surf's Up Festival 2023! 🏄‍♂️🌊 Dive into a weekend of sun, sand, and surf as we celebrate the coastal lifestyle of Sydney's iconic beaches. From surfing competitions and beach volleyball tournaments to live music and beachside BBQs, experience the ultimate summer vibe and embrace the spirit of surf culture!",
       "image": "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "emails_registered": []
-    }    
+    }
   ]
 }

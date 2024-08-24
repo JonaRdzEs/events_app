@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 
-const buildPath = () => path.join(process.cwd(), "data", "data.json");
+const buildPath = () => path.join(process.cwd(), "src", "data", "data.json");
 
 const extractData = (filePath) => {
   const jsonData = fs.readFileSync(filePath);
@@ -10,10 +10,9 @@ const extractData = (filePath) => {
 
 function handler(request, response) {
   const { method } = request;
-  // check if the format of the email is OK
 
   const filePath = buildPath();
-  const { events_categories, allEvents } = extractData(filePath);
+  const { main_events, events_categories, allEvents } = extractData(filePath);
 
   if (!allEvents) {
     return response.status(404).json({
@@ -33,6 +32,7 @@ function handler(request, response) {
       });
       return;
     }
+
     if (!event_id) {
       response.status(400).json({
         code: "BAD_REQUEST",
@@ -41,7 +41,7 @@ function handler(request, response) {
       return;
     }
 
-    const event_to_register = allEvents.filter((event) => event.id === event_id);
+    const event_to_register = allEvents.find((event) => event.id === event_id);
 
     if (!event_to_register) {
       return response.status(404).json({
@@ -55,11 +55,13 @@ function handler(request, response) {
       });
     }
     const filtered_event_index = allEvents.findIndex((event) => event.id === event_id);
-    const updated_data = allEvents.splice(filtered_event_index, 1, {
+    const eventsCopy = [...allEvents];
+    
+    eventsCopy[filtered_event_index] = {
       ...event_to_register,
       emails_registered: [...event_to_register.emails_registered, email],
-    });
-    fs.writeFileSync(filePath, JSON.stringify({ events_categories, allEvents: updated_data }, null, 2));
+    }
+    fs.writeFileSync(filePath, JSON.stringify({ main_events, events_categories, allEvents: eventsCopy }, null, 2));
 
     response.status(200).json({
       message: `You have been registered successfully with the email: ${email}`,
