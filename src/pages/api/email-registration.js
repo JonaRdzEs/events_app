@@ -4,7 +4,7 @@ import fs from "fs";
 const buildPath = () => {
   return process.env.ENVIRONMENT === "development"
     ? path.join(process.cwd(), "src", "data", "data.json")
-    : path.join("/tmp", "data.json");
+    : path.join(process.cwd(), "/tmp", "data.json");
 };
 
 const extractData = (filePath) => {
