@@ -1,7 +1,11 @@
 import path from "path";
 import fs from "fs";
 
-const buildPath = () => path.join(process.cwd(), "src", "data", "data.json");
+const buildPath = () => {
+  return process.env.ENVIRONMENT === "development"
+    ? path.join(process.cwd(), "src", "data", "data.json")
+    : path.join("/tmp", "data.json");
+};
 
 const extractData = (filePath) => {
   const jsonData = fs.readFileSync(filePath);
@@ -23,7 +27,8 @@ function handler(request, response) {
 
   if (method === "POST") {
     const { email, event_id } = request.body;
-    const validEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const validEmailRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (!email || !email.match(validEmailRegex)) {
       response.status(400).json({
@@ -54,14 +59,23 @@ function handler(request, response) {
         message: "This email has already been registered",
       });
     }
-    const filtered_event_index = allEvents.findIndex((event) => event.id === event_id);
+    const filtered_event_index = allEvents.findIndex(
+      (event) => event.id === event_id
+    );
     const eventsCopy = [...allEvents];
-    
+
     eventsCopy[filtered_event_index] = {
       ...event_to_register,
       emails_registered: [...event_to_register.emails_registered, email],
-    }
-    fs.writeFileSync(filePath, JSON.stringify({ main_events, events_categories, allEvents: eventsCopy }, null, 2));
+    };
+    fs.writeFileSync(
+      filePath,
+      JSON.stringify(
+        { main_events, events_categories, allEvents: eventsCopy },
+        null,
+        2
+      )
+    );
 
     response.status(200).json({
       message: `You have been registered successfully with the email: ${email}`,
