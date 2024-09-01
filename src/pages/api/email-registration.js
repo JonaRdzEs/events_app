@@ -59,7 +59,7 @@ function handler(request, response) {
         message: "This email has already been registered",
       });
     }
-    const filtered_event_index = allEvents.findIndex(
+    /*const filtered_event_index = allEvents.findIndex(
       (event) => event.id === event_id
     );
     const eventsCopy = [...allEvents];
@@ -75,7 +75,7 @@ function handler(request, response) {
         null,
         2
       )
-    );
+    );*/
 
     response.status(200).json({
       message: `You have been registered successfully with the email: ${email}`,
