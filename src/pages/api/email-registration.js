@@ -1,11 +1,11 @@
 import path from "path";
 import fs from "fs";
 
-const buildPath = () => {
+/* const buildPath = () => {
   return process.env.ENVIRONMENT === "development"
     ? path.join(process.cwd(), "src", "data", "data.json")
     : path.join(process.cwd(), "/tmp", "data", "data.json");
-};
+}; */
 
 const extractData = (filePath) => {
   const jsonData = fs.readFileSync(filePath);
@@ -15,15 +15,9 @@ const extractData = (filePath) => {
 function handler(request, response) {
   const { method } = request;
 
-  const filePath = buildPath();
-  const { main_events, events_categories, allEvents } = extractData(filePath);
+  /* const filePath = buildPath();
+  const { main_events, events_categories, allEvents } = extractData(filePath); */
 
-  if (!allEvents) {
-    return response.status(404).json({
-      status: 404,
-      message: "Events data not found!",
-    });
-  }
 
   if (method === "POST") {
     const { email, event_id } = request.body;
@@ -46,7 +40,7 @@ function handler(request, response) {
       return;
     }
 
-    const event_to_register = allEvents.find((event) => event.id === event_id);
+    /* const event_to_register = allEvents.find((event) => event.id === event_id);
 
     if (!event_to_register) {
       return response.status(404).json({
@@ -58,7 +52,7 @@ function handler(request, response) {
       return response.status(409).json({
         message: "This email has already been registered",
       });
-    }
+    } */
     /*const filtered_event_index = allEvents.findIndex(
       (event) => event.id === event_id
     );
